@@ -1,0 +1,11 @@
+{
+  "name": "scarface-aspnetcore",
+  "version": "1.0.0",
+  "description": "Scarface template to aspnetcore API",
+  "main": "AspnetCoreGenerator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

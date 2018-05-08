@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+
+  "info": {
+    "title": "Todo List",
+    "description": "Sample application for Todo List",
+    "author": "Bruno Bertoni de Paula",
+    
+    "contact": {
+      "email": "bruno.bert.jj@gmail.com",
+      "facebook": "your facebook here",
+      "skype" : "your skype here"
+    }
+
+  },
+
+  "appconfig": {
+    "name": "TodoList",
+
+    "dbconnection": {
+      "client": "mssql",
+      "host": "(localdb)\\\\MSSQLLocalDB",
+      "database": "test",
+      "port": "1433",
+      "trustedConnection": "true"
+    },
+
+ 
+   
+    "template": "aspnetcore"
+    
+
+  },
+
+  
+  "appmodel": {
+    "$schema": "http://json-schema.org/draft-06/schema",
+    "type": "object",
+    "properties": {
+      "tasks": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/task" }
+      }
+    },
+
+    "definitions": {
+      "Assignee": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" }
+        }
+      },
+
+      "Task": {
+        "type": "object",
+        "required": ["description"],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": "10",
+            "maxLength": "50"
+          },
+
+          "assignees": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Assignee" }
+          }
+        }
+      }
+    }
+  }
+}
